@@ -3,7 +3,7 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 from welcome.views import index, health
-from callback.views import callback
+from callback.views import callback, setcbk
 
 urlpatterns = [
     # Examples:
@@ -11,8 +11,9 @@ urlpatterns = [
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^$', index),
-    url(r'^health$', health),
-    url(r'^callback$', callback),
+    url(r'^health/', health),
+    url(r'^callback/', callback),
+    url(r'^setCallback/', setcbk),
     url(r'^admin/', include(admin.site.urls)),
 ]
 
