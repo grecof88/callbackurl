@@ -6,9 +6,11 @@ from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.conf import settings
 from .forms import LogForm
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 
+@csrf_exempt
 def callback(request):
 
     if request.method == 'POST':
@@ -24,8 +26,9 @@ def callback(request):
         fail_silently=False)#Change to true
         return HttpResponse("OK")
     else:
-        form = LogForm()
-        return render(request, 'cbkform.html', {'form': form})
+        return HttpResponse("KO")
+    #    form = LogForm()
+    #    return render(request, 'cbkform.html', {'form': form})
 
 
 def setcbk(request):

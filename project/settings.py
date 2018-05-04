@@ -138,3 +138,6 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'carloceliaco@gmail.com'
 EMAIL_HOST_PASSWORD = 'uConnectLive01'
 EMAIL_PORT = 587
+
+CSRF_COOKIE_SECURE = False
+APPEND_SLASH = False
