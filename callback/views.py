@@ -18,7 +18,7 @@ def callback(request):
         subject = "Callback"
         from_email = settings.DEFAULT_FROM_EMAIL
         to_email = "cbkurltest@mailinator.com"
-        message = json.dumps(request.POS)
+        message = json.dumps(request.POST)
 
         send_mail(subject=subject, 
         from_email=from_email, 
