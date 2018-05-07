@@ -1,5 +1,6 @@
 import os
 import requests
+import json
 from requests.auth import HTTPBasicAuth
 from django.shortcuts import render
 from django.http import HttpResponse
@@ -17,7 +18,7 @@ def callback(request):
         subject = "Callback"
         from_email = settings.DEFAULT_FROM_EMAIL
         to_email = "cbkurltest@mailinator.com"
-        message = request.POST
+        message = json.dumps(request.POS)
 
         send_mail(subject=subject, 
         from_email=from_email, 
