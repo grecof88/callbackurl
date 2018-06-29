@@ -19,9 +19,9 @@ def callback(request):
         from_email = settings.DEFAULT_FROM_EMAIL
         to_email = "cbkurltest@mailinator.com"
         body_unicode = request.body.decode('utf-8')
-        body = json.loads(body_unicode)
-        #content = body['content']
-        message = json.dumps(body)
+        #body = json.loads(body_unicode)
+        
+        message = body_unicode#json.dumps(body)
 
         send_mail(subject=subject, 
         from_email=from_email, 
